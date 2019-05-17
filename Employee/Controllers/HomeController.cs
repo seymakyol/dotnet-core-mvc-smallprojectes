@@ -46,6 +46,17 @@ namespace Employee.Controllers
         {
             return View(_context.Calisanlar.Find(id));
         }
-     
+
+
+        public IActionResult Edit(Calisan newCalisan,int id)
+        {
+            var calisan = _context.Calisanlar.Find(id);
+
+            calisan.Name = newCalisan.Name;
+            calisan.Age = newCalisan.Age;
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+               
+        }
     }
 }
