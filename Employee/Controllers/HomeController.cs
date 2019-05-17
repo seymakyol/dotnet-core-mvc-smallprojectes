@@ -21,20 +21,26 @@ namespace Employee.Controllers
         public IActionResult Index()
         {
 
-                var calisanlar = _context.Calisanlar.ToList();
-    
-            
-
+                var calisanlar = _context.Calisanlar.ToList();   
                 return View(calisanlar);
             
         }
 
-        public IActionResult List()
+
+        [HttpGet]
+        public IActionResult Create()
         {
-
-
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Create(Calisan model)
+        {
+            _context.Add(model);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
      
     }
 }
