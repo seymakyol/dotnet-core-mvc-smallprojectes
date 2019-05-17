@@ -41,6 +41,11 @@ namespace Employee.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            return View(_context.Calisanlar.Find(id));
+        }
      
     }
 }

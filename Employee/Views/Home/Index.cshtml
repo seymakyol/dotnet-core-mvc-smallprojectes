@@ -17,7 +17,7 @@
 
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">Id</th>
                     <th scope="col">Name</th>
                     <th scope="col">Age</th>
                     <th scope="col">Action</th>
@@ -32,10 +32,20 @@
                 {
 
                     <tr>
-                        <th scope="row">1</th>
+                        <th scope="row">@item.Id</th>
+
+
                         <td>@item.Name</td>
                         <td>@item.Age</td>
-                        <td> </td>
+                        <td>
+
+                            <a asp-action="Edit" asp-controller="Home" class="btn btn-info mt-3 btn-sm"  asp-route-id="@item.Id">Edit   </a>
+
+                            <a asp-action="Edit" asp-controller="Home" class="btn btn-danger mt-3 btn-sm">Delete </a>
+
+
+
+                        </td>
                     </tr>
                 }
 
