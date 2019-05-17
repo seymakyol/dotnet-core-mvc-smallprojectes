@@ -58,5 +58,14 @@ namespace Employee.Controllers
             return RedirectToAction("Index");
                
         }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            Calisan calisan=_context.Calisanlar.Find(id);
+            _context.Calisanlar.Remove(calisan);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
