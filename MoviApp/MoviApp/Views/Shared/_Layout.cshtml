@@ -1,0 +1,29 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+    <link href="/modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <title>Movie App</title>
+</head>
+<body>
+
+    <header>
+        @Html.Partial("_navbar")
+    </header>
+
+    <main>
+
+        <div class="container mt-4">
+
+            @RenderBody()
+
+        </div>
+
+    </main>
+
+    <footer>
+        @Html.Partial("_footer")
+    </footer>
+
+    </body>
+</html>
